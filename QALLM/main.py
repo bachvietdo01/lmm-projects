@@ -3,13 +3,14 @@ import os
 
 from langchain.llms import OpenAI
 
-os.environ["OPENAI_API_KEY"] = "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"
-llm = OpenAI(model_name="gpt-3.5-turbo-instruct", temperature = 0)
+os.environ["OPENAI_API_KEY"] = "xxx"
+llm = OpenAI(model_name="gpt-3.5-turbo-instruct", temperature=0)
 
 
 def get_query():
-    input_text = st.text_input("You: ", key = "input")
+    input_text = st.text_input("You: ", key="input")
     return input_text
+
 
 def return_answer(query):
     return llm(query)
@@ -27,8 +28,3 @@ submit = st.button("Generate")
 if submit:
     st.subheader("Answer:")
     st.write(response)
-
-
-
-
-
